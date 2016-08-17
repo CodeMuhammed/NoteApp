@@ -99,10 +99,9 @@ class NotesApplication {
     }
 
     /**
-     *This method takes the id of a note  and deletes the note content of that id
-  	 * Argument passed in must be strictly of integer type
-     *
-  	 * @params integer note_id
+     * This method takes the id of a note  and deletes the note content of that id
+     * Arguments passed in must be of type integer
+     * @params integer note_id
      */
     deleteNote(note_id) {
       //check to see if note_id is within bounds
