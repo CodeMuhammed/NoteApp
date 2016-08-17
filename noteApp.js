@@ -52,11 +52,10 @@ class NotesApplication {
 
 
     /**
-    * This method takes the id of a note  and returns the note content of that id
-	  * Argument passed in must be strictly of int type
-	  *
-	  * @params int note_id
-    *
+     * This method takes the id of a note  and returns the note content of that id
+	   * Argument passed in must be strictly of int type
+	   *
+	   * @params int note_id
     */
     get(note_id) {
     	//check to see if note_id is within bounds
@@ -87,26 +86,33 @@ class NotesApplication {
 
 	        for(let i=0; i<this.notes_list.length; i++){
 	        	if(this.notes_list.indexOf(search_text)){
-	        		console.log('Note ID:', [i]);
-             	    console.log([this.notes_list[i]]);
+	        		   console.log('Note ID:', [i]);
+             	   console.log([this.notes_list[i]]);
 	        	}
 	        }
 
 	        console.log('By Author /n' , this.author_name);
         }
         else{
-        	throw new Error('Type Error: note_content is not a string');
+        	 throw new Error('Type Error: note_content is not a string');
         }
 
     }
 
     /**
-    *
-    *
-    *
-    */
+     * This method takes the id of a note  and deletes the note content of that id
+  	 * Argument passed in must be strictly of int type
+  	 *
+  	 * @params int note_id
+     */
     delete(note_id) {
-
+        //check to see if note_id is within bounds
+    	if(Math.abs(note_id) < this.notes_list.length) {
+        	this.notes_list.splice(note_id , 1);
+        }
+        else{
+        	throw new Error('Out of bounds error: The note_id does not exist');
+        }
     }
 
     /**
