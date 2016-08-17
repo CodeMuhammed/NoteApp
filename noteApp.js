@@ -1,16 +1,13 @@
 'use strict';
 
 /**
- *
- *
- *
- * {} []
-*/
+ * A simple note taking application
+ */
 class NotesApplication {
 
-    /**
-	   * @constructor
-	   */
+   /**
+	  * @constructor
+	  */
     constructor(author) {
         this.author_name = author;
         this.notes_list = [];
@@ -53,10 +50,10 @@ class NotesApplication {
 
     /**
      * This method takes the id of a note  and returns the note content of that id
-	   * Argument passed in must be strictly of int type
-	   *
-	   * @params int note_id
-    */
+	  * Argument passed in must be strictly of int type
+	  *
+	  * @params int note_id
+    **/
     get(note_id) {
     	//check to see if note_id is within bounds
     	if(Math.abs(note_id) < this.notes_list.length) {
@@ -103,7 +100,7 @@ class NotesApplication {
      * This method takes the id of a note  and deletes the note content of that id
   	 * Argument passed in must be strictly of int type
   	 *
-  	 * @params int note_id
+  	 * @params integer note_id
      */
     delete(note_id) {
         //check to see if note_id is within bounds
@@ -116,11 +113,20 @@ class NotesApplication {
     }
 
     /**
-    *
-    *
-    *
-    */
+     * This method takes the id of a note and a new string and replace the old
+     * note attached to a note id
+     *
+     * @params integer note_id
+     * @params string new_content
+     *
+     */
     edit(note_id, new_content) {
-
+         //Ensure that note_id is valid and make sure that the new_content is of type string
+         if(Math.abs(note_id) < this.notes_list.length && typeof(note_content) === 'string') {
+        	this.notes_list[note_id]  = new_content;
+        }
+        else{
+        	throw new Error('The note_id does not exist or new_content is not a valid note');
+        }
     }
 }
