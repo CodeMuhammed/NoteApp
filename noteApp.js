@@ -5,9 +5,8 @@
  *
  *
  * {} []
- */
-
- class NotesApplication {
+*/
+class NotesApplication {
 
  	 /**
 	 *
@@ -20,11 +19,11 @@
     }
 
     /**
-	  * This method creates a new note and adds it to the list of notes for this author
-	  * Argument passed in must be strictly of string type
-	  *
-	  * @params string note_content
-	  */
+	 * This method creates a new note and adds it to the list of notes for this author
+	 * Argument passed in must be strictly of string type
+	 *
+	 * @params string note_content
+	*/
     create(note_content) {
     	//Ensure that the passed in argument is of string type
         if(typeof(note_content) === 'string'){
@@ -55,12 +54,20 @@
 
 
     /**
-    *
-    *
+    * This method takes the id of a note  and returns the note content of that id
+	* Argument passed in must be strictly of int type
+	*
+	* @params int note_id
     *
     */
     get(note_id) {
-
+    	//check to see if note_id is within bounds
+    	if(Math.abs(note_id) < this.notesList.length) {
+        	return this.notesList[note_id];
+        }
+        else{
+        	throw new Error('Out of bounds error: The note_id does not exist');
+        }
     }
 
     /**
@@ -82,12 +89,11 @@
     }
 
     /**
-	  *
-	  *
-	  *
-	  */
+    *
+    *
+    *
+    */
     edit(note_id, new_content) {
 
     }
-
- }
+}
