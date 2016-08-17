@@ -20,12 +20,19 @@
     }
 
     /**
+	 * This method creates a new note and adds it to the list of notes for this author
+	 * Argument passed in must be strictly of string type
 	 *
-	 *
-	 *
+	 * @params string note_content
 	*/
     create(note_content) {
-        console.log(this.note_content);
+    	//Ensure that the passed in argument is of string type
+        if(typeof(note_content) === 'string'){
+        	this.notesList.push(note_content);
+        }
+        else{
+        	throw new Error('Type Error: note_content is not a string');
+        }
     }
 
     /**
