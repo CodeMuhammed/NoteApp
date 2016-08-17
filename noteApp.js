@@ -7,7 +7,7 @@ class NotesApplication {
 
     /**
      * @constructor
-     * @params string author
+     * @params {string} author
      */
     constructor(author) {
       this.author_name = author;
@@ -21,7 +21,7 @@ class NotesApplication {
      *This method creates a new note and adds it to the list of notes for this author
      *Argument passed in must be strictly of string type
      *
-     *@params string note_content
+     *@params {string} note_content
      */
     create(note_content) {
       //Ensure that the passed in argument is of string type
@@ -57,7 +57,8 @@ class NotesApplication {
      *This method takes the id of a note  and returns the note content of that id
      *Argument passed in must be strictly of integer type
      *
-     *@params int note_id
+     *@params {integer} note_id
+     *@return {string} a note with the given note_id
      */
     getNote(note_id) {
       //check to see if note_id is within bounds
@@ -78,6 +79,8 @@ class NotesApplication {
      * [NOTE_CONTENT]
      *
      * By Author [author]
+     *
+     * @params {string} search_text
     */
     searchNotes(search_text) {
       //Ensure that the passed in argument is of string type
@@ -100,7 +103,7 @@ class NotesApplication {
     /**
      * This method takes the id of a note  and deletes the note content of that id
      * Arguments passed in must be of type integer
-     * @params integer note_id
+     * @params {integer} note_id
      */
     deleteNote(note_id) {
       //check to see if note_id is within bounds
@@ -119,8 +122,8 @@ class NotesApplication {
      * This method takes the id of a note and a new string and replace the old
      * note attached to a note id
      *
-     * @params integer note_id
-     * @params string new_content
+     * @params {integer} note_id
+     * @params {string} new_content
      *
      */
     editNote(note_id, new_content) {
