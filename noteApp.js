@@ -98,12 +98,7 @@ class NotesApplication {
       }
     }
 
-    /**
-     * This method takes the id of a note  and deletes the note content of that id
-  	 * Argument passed in must be strictly of int type
-  	 *
-  	 * @params integer note_id
-     */
+    
     deleteNote(note_id) {
       //check to see if note_id is within bounds
       if(Math.abs(note_id) < this.notes_list.length) {
