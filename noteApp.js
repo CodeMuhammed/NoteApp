@@ -7,7 +7,7 @@ class NotesApplication {
 
     /**
      * @constructor
-     * @params {string} author
+     * @param {string} author
      */
     constructor(author) {
       this.author_name = author;
@@ -57,7 +57,7 @@ class NotesApplication {
      *This method takes the id of a note  and returns the note content of that id
      *Argument passed in must be strictly of integer type
      *
-     *@params {integer} note_id
+     *@param {integer} note_id
      *@return {string} a note with the given note_id
      */
     getNote(note_id) {
@@ -80,7 +80,8 @@ class NotesApplication {
       *
       * By Author [author]
       *
-      * @params {string} search_text
+      * @param {string} search_text
+      * @return {string} a note with the given note_id
       *
       * @NOTE This method is a generator function
      */
@@ -93,7 +94,7 @@ class NotesApplication {
          console.log('Showing results for search' , search_text);
          for(let i=0; i<this.notes_list.length; i++){
            if(this.notes_list.indexOf(search_text)){
-           	yield `Note ID: [${i}] \n ${[this.notes_list[i]]} \nBy Author ${this.author_name}`;
+             yield `Note ID: [${i}] \n${[this.notes_list[i]]} \nBy Author ${this.author_name}`;
            }
          }
        }

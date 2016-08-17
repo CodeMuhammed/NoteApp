@@ -1,5 +1,5 @@
 # NoteApp
-## This is s simplified implementation of evernote -- A note taking application that does the bare bones minimums listed below
+## This is a simplified implementation of evernote -- A note taking application that does the bare bones minimums listed below
 
 #### Creating new notes which are basically stored in an array
 
