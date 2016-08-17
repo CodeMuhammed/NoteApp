@@ -57,9 +57,9 @@ class NotesApplication {
 
     /**
      * This method takes the id of a note  and returns the note content of that id
-	 * Argument passed in must be strictly of int type
-	 *
-	 * @params int note_id
+	   * Argument passed in must be strictly of int type
+	   *
+	   * @params int note_id
      **/
     getNote(note_id) {
     	//check to see if note_id is within bounds
