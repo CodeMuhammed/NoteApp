@@ -10,4 +10,3 @@
 #### Delete unwanted notes
 
 #### Gets specific note for reading
->>>>>>> feature3
