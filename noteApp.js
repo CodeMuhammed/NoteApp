@@ -8,26 +8,24 @@
 */
 class NotesApplication {
 
- 	 /**
-	 *
-	 *
-	 *
-	 */
+    /**
+	   * @constructor
+	   */
     constructor(author) {
-        this.authorName = author;
-        this.notesList = [];
+        this.author_name = author;
+        this.notes_list = [];
     }
 
     /**
-	 * This method creates a new note and adds it to the list of notes for this author
-	 * Argument passed in must be strictly of string type
-	 *
-	 * @params string note_content
-	*/
+	   * This method creates a new note and adds it to the list of notes for this author
+  	 * Argument passed in must be strictly of string type
+  	 *
+  	 * @params string note_content
+  	*/
     create(note_content) {
     	//Ensure that the passed in argument is of string type
         if(typeof(note_content) === 'string'){
-        	this.notesList.push(note_content);
+        	this.notes_list.push(note_content);
         }
         else{
         	throw new Error('Type Error: note_content is not a string');
@@ -44,26 +42,26 @@ class NotesApplication {
     *
     */
     listNotes() {
-        for(let i=0; i<this.notesList.length; i++){
+        for(let i=0; i<this.notes_list.length; i++){
         	console.log('Note ID:', [i]);
-        	console.log([this.notesList[i]]);
+        	console.log([this.notes_list[i]]);
         }
 
-        console.log('By Author /n' , this.authorName);
+        console.log('By Author /n' , this.author_name);
     }
 
 
     /**
     * This method takes the id of a note  and returns the note content of that id
-	* Argument passed in must be strictly of int type
-	*
-	* @params int note_id
+	  * Argument passed in must be strictly of int type
+	  *
+	  * @params int note_id
     *
     */
     get(note_id) {
     	//check to see if note_id is within bounds
-    	if(Math.abs(note_id) < this.notesList.length) {
-        	return this.notesList[note_id];
+    	if(Math.abs(note_id) < this.notes_list.length) {
+        	return this.notes_list[note_id];
         }
         else{
         	throw new Error('Out of bounds error: The note_id does not exist');
@@ -71,11 +69,34 @@ class NotesApplication {
     }
 
     /**
-    *
-    *
-    *
+     * This function take a search string, search_text and returns all the notes
+     * with that text within it in the following format
+     *
+     * Showing results for search ‘[<search_text>]’
+     * Note ID: [note_id]
+     * [NOTE_CONTENT]
+     *
+     * By Author [author]
     */
     search(search_text) {
+    	//Ensure that the passed in argument is of string type
+        if(typeof(note_content) === 'string'){
+
+	        //Search throught notes_list for matching pairs
+	        console.log('Showing results for search ‘${search_text}’');
+
+	        for(let i=0; i<this.notes_list.length; i++){
+	        	if(this.notes_list.indexOf(search_text)){
+	        		console.log('Note ID:', [i]);
+             	    console.log([this.notes_list[i]]);
+	        	}
+	        }
+
+	        console.log('By Author /n' , this.author_name);
+        }
+        else{
+        	throw new Error('Type Error: note_content is not a string');
+        }
 
     }
 
