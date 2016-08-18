@@ -71,37 +71,37 @@ class NotesApplication {
     }
 
     /**
-      * This function take a search string, search_text and returns all the notes
-      * with that text within it in the following format
-      *
-      * Showing results for search ‘[<search_text>]’
-      * Note ID: [note_id]
-      * [NOTE_CONTENT]
-      *
-      * By Author [author]
-      *
-      * @param {string} search_text
-      * @return {string} a note with the given note_id
-      *
-      * @NOTE This method is a generator function
-     */
+    * This function take a search string, search_text and returns all the notes
+    * with that text within it in the following format
+    *
+    * Showing results for search ‘[<search_text>]’
+    * Note ID: [note_id]
+    * [NOTE_CONTENT]
+    *
+    * By Author [author]
+    *
+    * @params {string} search_text
+    * @return {array} search_results
+    *
+    * @NOTE This method is a generator function
+   */
 
-     *searchNotes(search_text) {
-       console.log('entered');
-       //Ensure that the passed in argument is of string type
-       if(typeof(search_text) === 'string'){
-         //Search throught notes_list for matching pairs
-         console.log('Showing results for search' , search_text);
-         for(let i=0; i<this.notes_list.length; i++){
-           if(this.notes_list.indexOf(search_text)){
-             yield `Note ID: [${i}] \n${[this.notes_list[i]]} \nBy Author ${this.author_name}`;
-           }
+   *searchNotes(search_text) {
+     console.log('entered');
+     //Ensure that the passed in argument is of string type
+     if(typeof(search_text) === 'string'){
+       //Search throught notes_list for matching pairs
+       console.log('Showing results for search' , search_text);
+       for(let i=0; i<this.notes_list.length; i++){
+         if(this.notes_list.indexOf(search_text)){
+           yield `Note ID: [${i}] \n${[this.notes_list[i]]} \nBy Author ${this.author_name} \n`;
          }
        }
-       else{
-         throw new Error('Type Error: note_content is not a string');
-       }
      }
+     else{
+       throw new Error('Type Error: note_content is not a string');
+     }
+   }
 
     /**
      * This method takes the id of a note  and deletes the note content of that id
